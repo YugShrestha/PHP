@@ -20,12 +20,14 @@
     $books=[
         ['name'=>'Do android dream of electric sheep',
           'author'=> 'Phillip k .Dick',
+          'releaseYear'=>'1989',
           'purchaseUrl'=>'https://example.com'
 
     ],
 
         ['name'=>'project hail Mary',
         'author'=>'Andy weir',
+        'releaseYear'=>'1988',
         'purchaseUrl'=>'https://example.com'
 
         ]
@@ -43,7 +45,7 @@
         <?php foreach($books as $book) : ?>
             <li>
                <a href=<?php echo $book["purchaseUrl"]; ?> >
-               <?php echo  $book['name'] ;?>
+               <?php echo  $book['name'] ; ?> <?php echo "(".$book['releaseYear'].")"; ?>
                  </a>
         </li>
         
