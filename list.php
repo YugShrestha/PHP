@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books</title>
 </head>
+<style>
+    h1{
+        
+        display: grid;
+    text-align: center;
+
+    }
+ </style>
+
 <body>
     <h1>Recomended Books</h1>
     <?php 
@@ -12,9 +21,8 @@
     "The langoliers",
     "hail mary"
 
-    ];
-
-    foreach($books as $book);
+];
+    
     
     ?>
     <ul>
@@ -22,10 +30,11 @@
     <?php  foreach($books as $book):
     ?>
     <?php echo "<li> $book</li>"?>
-    <?php endforeach; ?>
+    <?php endforeach ?>
     
     
     </ul>
+    
     
 </body>
 </html>
