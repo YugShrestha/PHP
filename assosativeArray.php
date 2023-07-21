@@ -24,7 +24,7 @@
 
     ],
 
-        ['name'=>'project hail MAry',
+        ['name'=>'project hail Mary',
         'author'=>'Andy weir',
         'purchaseUrl'=>'https://example.com'
 
@@ -41,8 +41,14 @@
     ?>
     <ul>
         <?php foreach($books as $book) : ?>
-            <li><?php echo $book['name'] ;?></li>
+            <li>
+               <a href=<?php echo $book["purchaseUrl"]; ?> >
+               <?php echo  $book['name'] ;?>
+                 </a>
+        </li>
+        
         <?php endforeach; ?>
+
     </ul>
     
 </body>
