@@ -44,18 +44,26 @@
 
     ];
 
-  function filterByAuthor($books)
-{
-  return $books;
+  function filter($items,$key,$value){
+    $filteredItems=[];
+
+    foreach($items as $item){
+        if($item[$key]=== $value){
+            $filteredItems[]=$item;
+        }
+        
+    }
+    return $filteredItems;
 
 
   }
+  $filteredBooks=filter($books,'author','Andy Weir');
     
     
     ?>
     <ul>
     
-        <?php foreach(filterByAuthor($books,'Andy Weir') as $book) : ?>
+        <?php foreach($filteredBooks as $book) : ?>
            
             <li>
                <a href=<?php echo $book['purchaseUrl']; ?> >
@@ -66,9 +74,6 @@
         <?php endforeach; ?>
 
     </ul>
-    <p>
-        <?= filterByAuthor($books) ;?>
-    </p>
     
 </body>
 </html>
