@@ -44,20 +44,22 @@
 
     ];
 
-  function filter($items,$key,$value){
-    $filteredItems=[];
+  function filter($items,$fn){
+    $filteredItems=[];// null array 
 
     foreach($items as $item){
-        if($item[$key]=== $value){
-            $filteredItems[]=$item;
+        if($fn($item)){ // item asin books 
+            $filteredItems[]=$item;// new list of array 
         }
         
     }
-    return $filteredItems;
+    return $filteredItems; // returns empty array 
 
 
   }
-  $filteredBooks=filter($books,'author','Andy Weir');
+  $filteredBooks=filter($books,function($book) { // function call 
+     return $book['releaseYear']>=2000; // return books releaseYear 
+  });
     
     
     ?>
