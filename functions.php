@@ -44,9 +44,16 @@
 
     ];
 
-  function filterByAuthor($books)
-{
-  return $books;
+  function filterByAuthor($books,$author){
+    $filteredBooks=[];
+
+    foreach($books as $book){
+        if($book['author']=== $author){
+            $filteredBooks[]=$book;
+        }
+        
+    }
+    return $filteredBooks;
 
 
   }
@@ -66,9 +73,6 @@
         <?php endforeach; ?>
 
     </ul>
-    <p>
-        <?= filterByAuthor($books) ;?>
-    </p>
     
 </body>
 </html>
